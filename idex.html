@@ -29,18 +29,42 @@
 <body>
     <h1>Aimmation</h1>
     <h2 class="ml4">
-        <span class="letters letter-1">DEVTOWN</span>
+        <span class="letters letters-1">DEVTOWN</span>
     </h2>
+    ​<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script>
         var ml4={};
-        ml4.opacity=[0,1];
-        ml4.scaleIn=[0.2,1];
+        ml4.opacityIn=[0, 1];
+        ml4.scaleIn=[0.2, 1];
         ml4.scaleOut=3;
         ml4.durationIn=800;
         ml4.durationOut=600;
-        ml4.delay=500
+        ml4.delay=500;
+        //name the animation as anime
+        anime
+        .timeline({loop:true})
+        .add(
+            {
+                //add target object
+                targets:".ml4 .letters-1",
+                opacity:ml4.opacityIn,
+                scale:ml4.scaleIn,
+                duration:ml4.durationIn
+
+            })
+            .add(
+                {
+                   targets:".ml4 .letters-1",
+                   opacity:0, 
+                   scale:ml4.scaleOut,
+                   duration:ml4.durationOut,
+                   easing:"easeInExpo",
+                   delay:ml4.delay
+                }
+            )
+        
     </script>
     
-    ​<script src="https://cdnjs.cloudflare.com/ajax/lib..."></script>
+
 </body>
 </html>
